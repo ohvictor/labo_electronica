@@ -1,14 +1,20 @@
+%Preambulo
+
 \documentclass{article}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \pgfplotsset{compat=1.16}
-\usepackage{siunitx}
 \usepackage{booktabs}
+\usepackage{siunitx}
 
-    \sisetup{
-        round-mode      = places,
-        round-precision = 2,
+    \pgfplotstableset{
+        alias/fgen/.initial = Frecuencia Generador,
+        alias/var1/.initial = Componente Variable 1,
+        alias/var2/.initial = Componente Variable 2,
+        alias/fcal/.initial = Frecuencia Calculada,
     }
+
+%Documento (sacando el environment document)
 
     \begin{document}
         Placeholder text.
@@ -17,13 +23,34 @@
             \begin{center}
                 \pgfplotstabletypeset[
                     col sep = comma,
+                    columns={fgen, var1, var2, fcal, Error},
+                    column type/.add = {|}{},
+                    columns/fgen/.style={
+                        column name = $f_{GEN}$,
+                        sci, sci zerofill, precision = 3                        
+                    },
+                    columns/var1/.style={
+                        column name = $Z_1$,
+                    },
+                    columns/var2/.style={
+                        column name = $Z_2$,
+                    },
+                    columns/fcal/.style={
+                        column name = $f_{CAL}$,
+                        sci, sci zerofill, precision = 3
+                    },
+                    every last column/.style={
+                        column type/.add = {}{|},
+                    },
                     every head row/.style={
                         before row = {\toprule},
-                        after row = {\midrule}
+                        after row = {
+                            $[\si{\hertz}]$ & & & $[\si{\hertz}]$ & $[\%]$\\
+                            \midrule}
                     },
                     every last row/.style={after row=\bottomrule},
                     ]{tabla2b.csv}
-                \caption{Tabla Rellenable}
+                \caption{Tabla Rellenable Ejercicio 2}
                 \label{tab:test1}
             \end{center}
         \end{table}
