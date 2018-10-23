@@ -1,0 +1,30 @@
+\pgfplotstabletypeset[
+                col sep = comma,
+                display columns/0/.style = {
+                    column name = $f_{GEN}$,
+                    column type ={S},string type
+                }
+                display columns/1/.style = {
+                    column name = $Z_1$,
+                    column type ={S},string type
+                }
+                display columns/2/.style = {
+                    column name = $Z_2$,
+                    column type ={S},string type
+                }
+                display columns/3/.style = {
+                    column name = $f_{CAL}$,
+                    column type ={S},string type
+                }
+                display columns/4/.style = {
+                    column name = $Error$,
+                    column type ={S},string type
+                }
+                every head row/.style={
+                    before row ={\toprule},
+                    after row ={\midrule},
+                }
+                every last row/.style={
+                    after row=\bottomrule,
+                },
+            ]{tabla2b.csv}
