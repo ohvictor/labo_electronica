@@ -1,0 +1,7 @@
+Componente	Cantidad	Proposito
+Res-Fijo 100	1		Adaptacion de Inductancia x
+Res-Var	 100	1		Adaptacion de Inductancia x
+
+Res-Fijo 1k	1		Resistencia 4
+
+Res-Var		1		Resistencia 

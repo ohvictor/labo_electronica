@@ -1,0 +1,5 @@
+e3_H: 	Puente de Hay regulando R4 y R3
+e3_H2:	Puente de Hay regulando R1 y R3
+e3_M:	Puente de Maxwell, pero no garantizo que ande bien
+e3_M2:	Puente de Maxwell regulando R4 y R3
+e3_M3:	Puente de Maxwell regulando R1 y R3
