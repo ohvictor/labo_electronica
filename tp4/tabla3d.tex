@@ -2,61 +2,57 @@
     alias/nom/.initial = Nominal,
     alias/obs/.initial = Observaciones,
 }
-\begin{table}[h]
-    \begin{center}
-        \pgfplotstabletypeset[
-            %General%
-            col sep = comma,
-            string type,
-            columns = {nom,L1,Q1,P1,L10,Q10,P10,L100,Q100,P100,obs},
-            every head row/.style={
-                before row = {
-                    \toprule
-                    Valor & \multicolumn{3}{c|}{$f = 1\si{k\hertz}$} & \multicolumn{3}{c|}{$f = 10\si{k\hertz}$} & \multicolumn{3}{c|}{$f = 100\si{k\hertz}$} &\\
-                },
-                after row = {\midrule}
-            },
-            column type/.add = {|}{},
-            every last column/.style={
-                column type/.add={}{|},
-            },
-            every last row/.style={after row=\bottomrule},
-            %Especifico cada columna%
-            columns/nom/.style={
-                column name = Nominal,
-            },
-            columns/obs/.style={
-                column name = Observaciones,
-            },
-            columns/L1/.style={
-                column name = $L$,
-            },
-            columns/Q1/.style={
-                column name = $Q$,
-            },
-            columns/P1/.style={
-                column name = $P$,
-            },
-            columns/L10/.style={
-                column name = $L$,
-            },
-            columns/Q10/.style={
-                column name = $Q$,
-            },
-            columns/P10/.style={
-                column name = $P$,
-            },
-            columns/L100/.style={
-                column name = $L$,
-            },
-            columns/Q100/.style={
-                column name = $Q$,
-            },
-            columns/P100/.style={
-                column name = $P$,
-            },
-            ]{tabla3d.csv}
-        \caption{Tabla Rellenable Ejercicio 3}
-        \label{tab:test1}
-    \end{center}
-\end{table}
+\pgfplotstabletypeset[
+    %General%
+    col sep = comma,
+    string type,
+    columns = {nom,L1,Q1,P1,L10,Q10,P10,L100,Q100,P100,obs},
+    every head row/.style={
+        before row = {
+            \toprule
+            Valor & \multicolumn{3}{c|}{$f = 1\si{k\hertz}$} & \multicolumn{3}{c|}{$f = 10\si{k\hertz}$} & \multicolumn{3}{c|}{$f = 100\si{k\hertz}$} &\\
+        },
+        after row = {\midrule}
+    },
+    column type/.add = {|}{},
+    every last column/.style={
+        column type/.add={}{|},
+    },
+    every last row/.style={after row=\bottomrule},
+    %Especifico cada columna%
+    columns/nom/.style={
+        column name = Nominal,
+    },
+    columns/obs/.style={
+        column name = Observaciones,
+    },
+    columns/L1/.style={
+        column name = $L$,
+    },
+    columns/Q1/.style={
+        column name = $Q$,
+    },
+    columns/P1/.style={
+        column name = $P$,
+    },
+    columns/L10/.style={
+        column name = $L$,
+    },
+    columns/Q10/.style={
+        column name = $Q$,
+    },
+    columns/P10/.style={
+        column name = $P$,
+    },
+    columns/L100/.style={
+        column name = $L$,
+    },
+    columns/Q100/.style={
+        column name = $Q$,
+    },
+    columns/P100/.style={
+        column name = $P$,
+    },
+    ]{tabla3d.csv}
+\caption{Resultados de las mediciones}
+\label{tab:ej3}
