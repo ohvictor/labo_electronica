@@ -1,0 +1,22 @@
+\begin{circuitikz}[scale = 0.75, transform shape]
+    \draw
+    (0,0) to [sV, l=$V_g$] (0,14)
+    (4,0)
+    to [R , l=$100\si{\ohm}$] (4,2)
+    to [vR, l=$500\si{\ohm}$] (4,4)
+    to [C , l=$2.2\si{\nano\farad}$] (4,6)
+    to [R , l=$1.8\si{\kilo\ohm}$] (4,8)
+    to [vR, l=$100\si{\ohm}$] (4,10)
+    to [vR, l=$1\si{\kilo\ohm}$] (4,12)
+    to [vR, l=$20\si{\kilo\ohm}$] (4,14)
+    (8,0)
+    to [R , l=$100\si{\ohm}$] (8,6)
+    to [L , l=$L_x$] (8,14)
+    (8,8) to (7,8) to [R, l=$R_x$] (7,12) to (8,12)
+    (0,14) to (8,14)
+    (0,0) to (8,0)
+    (4,6) to [voltmeter, l=$V_d$] (8,6)
+    ;
+\end{circuitikz}
+\caption{Puente diseñado}
+\label{fig:ej3Design}

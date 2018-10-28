@@ -1,5 +1,6 @@
 \chapter{Medición de Inductancias}
     \section{Introducción}
+    \label{sec:ej3Intro}
     \begin{figure}[h]
         \begin{center}
             \input{hay.tex}
@@ -10,11 +11,88 @@
     $Q_N\approx53$ a una frecuencia $f=10\si{\kilo\hertz}$, se decidió utilizar un
     puente de Hay, como visto en la Figura \ref{fig:Hay}, en lugar de un puente de
     Maxwell, el cual funciona apropiadamente en un rango de $Q\in(1,10)$.
+    
     \section{Especificaciones}
+    \label{sec:ej3Specs}
     Se desea que el rango de inductancias medibles sea $L_x\in[0.4\si{\milli\henry};
     2.1\si{\milli\henry}]$. Además, el rango de Q también debe ser $[0.25Q_N; Q_N]$.
+    Estas características se deben cumplir cuando $f=10\si{\kilo\hertz}$ y $Q_N$ es
+    el factor de calidad de la bobina patrón.
+    
     \section{Diseño}
-    Para la realiación del puente, se tuvieron en cuenta las siguientes ecuaciones:
-    \begin{math}
-        E=mc^2
-    \end{math}
+    \label{sec:ej3Design}
+    Para la realización del puente, se tuvieron en cuenta las ecuaciones (\ref{eq:ej3V}),
+    (\ref{eq:ej3L}), (\ref{eq:ej3Q}) y (\ref{eq:ej3R}).
+    \begin{equation}
+        V_d=\frac{(R_3 + \frac{1}{C_3})}{(R_1+R_3 + \frac{1}{C_3})} - \frac{R_4}{((\frac{1}{R_x}+\frac{1}{sL_x})^{-1}+R_4)} \times V_g
+        \label{eq:ej3V}
+    \end{equation}
+    \begin{equation}
+        L_x = C_3 R_1 R_4
+        \label{eq:ej3L}
+    \end{equation}
+    \begin{equation}
+        Q_x=\frac{1}{2 \pi f C_3 R_3}
+        \label{eq:ej3Q}
+    \end{equation}
+    \begin{equation}
+        R_x=\frac{R_1 R_4}{R_3}
+        \label{eq:ej3R}
+    \end{equation}
+
+    Observando las ecuaciones (\ref{eq:ej3L}) y (\ref{eq:ej3Q}), se define que las variables
+    de ajuste serán $R_1$ y $R_3$, dado que intentar variar $C_3$ sería demasiado 
+    complicado y afecta a ambos $L_x$ y $Q_x$. Además, aunque $R_4$ también parece
+    ser un candidato viable, es preferible mantenerlo constante para que la relación
+    (\ref{eq:ej3A}) se mantenga constante.
+    
+    \begin{equation}
+        A=\frac{Z_4}{Z_2}=\frac{Z_3}{Z_1}
+        \label{eq:ej3A}
+    \end{equation}
+    
+    Teniendo en cuenta las variables a ser modificadas, los márgenes de operación
+    descriptos en la sección \ref{sec:ej3Specs} calcularon los valores para cada componente.
+    De las expresiones anteriores se obtiene que
+
+    \begin{equation}
+        R_1 \in [\frac{L_{min}}{C_3 R_4};\frac{L_{MAX}}{C_3 R_4}] = [1.8182\si{\kilo\ohm}; 9.5455\si{\kilo\ohm}]
+        \label{eq:ej3ranR1}
+    \end{equation}
+
+    \begin{equation}
+        R_3 \in [\frac{1}{2 \pi f Q_{MAX}}; \frac{1}{2 \pi f Q_{min}}] = [136.50\si{\ohm}; 545.98\si{\ohm}]
+        \label{eq:ej3ranR3}
+    \end{equation}
+
+    Dados los rangos obtenidos en las expresiones \ref{eq:ej3ranR1} y \ref{eq:ej3ranR3}, y considerando
+    los componentes disponibles, se eligieron los valores en el cuadro \ref{tab:ej3Specs} para construir
+    el puente y se obtiene el diseño en la Figura \ref{fig:ej3Design}.
+
+    \begin{table}[h]
+        \begin{center}
+            \begin{tabular}{|c|c|}
+                \hline
+                Componente & Valor \\
+                \hline
+                $R_1$ & $[1.8\si{\kilo\ohm} \rightarrow 11.8\si{\kilo\ohm}]$\\
+                $R_3$ & $[100\si{\ohm} \rightarrow 600\si{\ohm}]$\\
+                $R_4$ & $100\si{\ohm}$\\
+                $C_3$ & $2.2\si{\nano\farad}$\\
+                \hline
+            \end{tabular}
+            \caption{Especificaciones elegidas para los componentes}
+            \label{tab:ej3Specs}
+        \end{center}
+    \end{table}
+    \begin{figure}[ht!]
+        \begin{center}
+            \input{exphay.tex}
+        \end{center}
+    \end{figure}
+
+    Los resistores variables de menor tamaño fueron puestos con el propósito de reducir
+    la sensibilidad del puente respecto a $R_1$.
+
+    \newpage
+    \section{Simulación y Sensibilidades}
