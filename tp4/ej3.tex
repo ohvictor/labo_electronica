@@ -192,6 +192,35 @@
     se advierte no pasar de las 13 vueltas, ya que se encuentra fuera del rango de resistencias
     del puente.
 
+    \begin{table}[h]
+        \begin{center}
+            \begin{tabular}{|l|r|}
+                \hline
+                Especificación & Valor \\
+                \hline
+                Rango de $L_x$ & $[0.4;2.1]\si{\milli\henry}$ \\
+                Rango de $Q_x$ & $ [13.25; 53] $ \\
+                Frecuencia & $10\si{\kilo\hertz}$\\
+                $V_g$ & $10\si{\volt}$\\
+                $C_3$ & $2.2\si{\nano\farad}$\\
+                \hline
+            \end{tabular}
+            \begin{tabular}{|l|r|}
+                \hline
+                Especificación & Valor \\
+                \hline
+                $R_1$ & $[1.8;11.8]\si{\kilo\ohm}$\\
+                $R_3$ & $[100;600]\si{\ohm}$\\
+                $\Delta R_1$ & $4\si{\ohm}$ \\
+                $\Delta R_3$ & $20\si{\ohm}$ \\
+                $R_4$ & $100\si{\ohm}$\\
+                \hline
+            \end{tabular}
+            \caption{Especificaciones del Puente}
+            \label{tab:ej3specFin}
+        \end{center}
+    \end{table}
+
     \section{Mediciones}
     Armado el puente en placa experimental, se completó la tabla \ref{tab:ej3d}:
     \input{tabla3d.tex}
@@ -199,7 +228,6 @@
     Se repitieron las mediciones con el analizador de impedancias y se llenó la tabla \ref{tab:ej3e}
     \input{tabla3e.tex}
 
-    \newpage
     \section{Errores}
     Se calculó analíticamente el error en las ecuaciones \ref{eq:ej3errL} y \ref{eq:ej3errQ}.
     \begin{equation*}
@@ -226,6 +254,7 @@
         \label{eq:ej3errQ}
     \end{equation}
 
-
+    (LLenar con tabla de errores)
+    % \input{tablaErr.tex}
 
     \section{Conclusiones}

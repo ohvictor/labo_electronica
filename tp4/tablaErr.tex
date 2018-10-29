@@ -1,0 +1,23 @@
+\begin{table}[ht]
+    \begin{center}
+        \pgfplotstabletypeset[
+            %General%
+            col sep = comma,
+            string type,
+            every head row/.style={
+                before row = {\toprule},
+                after row = {
+                    $(\percent)$ & $(\percent)$\\
+                    \midrule
+                }
+            },
+            column type/.add = {|}{},
+            every last column/.style={
+                column type/.add={}{|},
+            },
+            every last row/.style={after row=\bottomrule},
+            ]{tablaErr.csv}
+        \caption{Errores}
+        \label{tab:ej3err}
+    \end{center}
+\end{table}
