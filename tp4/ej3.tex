@@ -40,9 +40,10 @@
         \label{eq:ej3R}
     \end{equation}
 
-    Observando las ecuaciones (\ref{eq:ej3L}) y (\ref{eq:ej3Q}), se define que las variables
+    Observando las ecuaciones (\ref{eq:ej3L}) y (\ref{eq:ej3Q}), se identificaron 4 grados
+    de libertar, de los cuales $C_3$ y $R_4$ se mantienen contantes. Por lo tanto, las variables
     de ajuste serán $R_1$ y $R_3$, dado que intentar variar $C_3$ sería demasiado 
-    complicado y afecta a ambos $L_x$ y $Q_x$. Además, aunque $R_4$ también parece
+    complicado y afecta a ambos $L_x$ y $Q_x$ y además, aunque $R_4$ también parece
     ser un candidato viable, es preferible mantenerlo constante para que la relación
     (\ref{eq:ej3A}) se mantenga constante.
     
@@ -51,17 +52,18 @@
         \label{eq:ej3A}
     \end{equation}
     
-    Teniendo en cuenta las variables a ser modificadas, los márgenes de operación
-    descriptos en la sección \ref{sec:ej3Specs} calcularon los valores para cada componente.
-    De las expresiones anteriores se obtiene que
+    Teniendo en cuenta las variables a ser modificadas y los márgenes de operación
+    descriptos en la sección \ref{sec:ej3Specs}, se calcularon los valores para cada componente.
+    Con $C_3=1.2\si{\nano\farad}$ y $R_4=1.560\si{\kilo\ohm}$, de las expresiones anteriores se 
+    obtiene que
 
     \begin{equation}
-        R_1 \in [\frac{L_{min}}{C_3 R_4};\frac{L_{MAX}}{C_3 R_4}] = [1.8182\si{\kilo\ohm}; 9.5455\si{\kilo\ohm}]
+        R_1 \in \left[\frac{L_{min}}{C_3 R_4};\frac{L_{MAX}}{C_3 R_4}\right] = [213.7\si{\ohm}; 1.122\si{\kilo\ohm}]
         \label{eq:ej3ranR1}
     \end{equation}
 
     \begin{equation}
-        R_3 \in [\frac{1}{2 \pi f Q_{MAX}}; \frac{1}{2 \pi f Q_{min}}] = [136.50\si{\ohm}; 545.98\si{\ohm}]
+        R_3 \in \left[\frac{1}{2 \pi f C_3 Q_{MAX}}; \frac{1}{2 \pi f C_3 Q_{min}}\right] = [293.4\si{\ohm}; 1.174\si{\kilo\ohm}]
         \label{eq:ej3ranR3}
     \end{equation}
 
@@ -75,10 +77,10 @@
                 \hline
                 Componente & Valor \\
                 \hline
-                $R_1$ & $[1.8\si{\kilo\ohm} \rightarrow 11.8\si{\kilo\ohm}]$\\
-                $R_3$ & $[100\si{\ohm} \rightarrow 600\si{\ohm}]$\\
-                $R_4$ & $100\si{\ohm}$\\
-                $C_3$ & $2.2\si{\nano\farad}$\\
+                $R_1$ & $[0.2\si{\kilo\ohm} \rightarrow 1.2\si{\kilo\ohm}]$\\
+                $R_3$ & $[0.2\si{\kilo\ohm} \rightarrow 1.2\si{\kilo\ohm}]$\\
+                $R_4$ & $1560\si{\ohm}$\\
+                $C_3$ & $1.2\si{\nano\farad}$\\
                 \hline
             \end{tabular}
             \caption{Especificaciones elegidas para los componentes}
@@ -93,10 +95,10 @@
     \end{figure}
 
     Los resistores variables de menor tamaño fueron puestos con el propósito de reducir
-    la sensibilidad del puente respecto a $R_1$. Además, se prefirió elegir las resistencias de tal forma que
-    abarquen un rango levemente mayor al calculado. Se utilizó un preset de $20\si{\kilo\ohm}$ dada la falta
-    de uno de $10\si{\kilo\ohm}$.
+    la sensibilidad del puente respecto a $R_1$. Además, se prefirió elegir las resistencias
+    de tal forma que abarquen un rango levemente mayor al calculado.
 
+    \newpage
     \section{Simulación y Sensibilidades}
 
     En las figuras \ref{fig:ej3Vd:patron} y \ref{fig:ej3Vd:min-MAX} se puede observar el comportamiento
@@ -106,16 +108,16 @@
     \begin{figure}[ht]
         \begin{center}
             \includegraphics[width=0.45\linewidth]{MATLAB/ej3Vd}
-            \caption{$L_x=0.9713\si{\milli\henry}$; $Q_x=53$(Componente Patrón)}
+            \caption{$L_x=0.9416\si{\milli\henry}$; $Q_x=45.2$(Componente Patrón)}
             \label{fig:ej3Vd:patron}
         \end{center}
     \end{figure}
 
     \begin{figure}[ht]
         \begin{center}
-            \includegraphics[width=0.4\linewidth]{MATLAB/ej3Vdmin}
-            \includegraphics[width=0.4\linewidth]{MATLAB/ej3Vdmax}
-            \caption{$L_x=0.4\si{\milli\henry}$; $Q_x=53$/$L_x=2.1\si{\milli\henry}$; $Q_x=13.25$}
+            \includegraphics[width=0.45\linewidth]{MATLAB/ej3Vdmin}
+            \includegraphics[width=0.45\linewidth]{MATLAB/ej3Vdmax}
+            \caption{$L_x=0.4\si{\milli\henry}$; $Q_x=45.2$/$L_x=2.1\si{\milli\henry}$; $Q_x=11.3$}
             \label{fig:ej3Vd:min-MAX}
         \end{center}
     \end{figure}
@@ -125,9 +127,7 @@
     momento se encuentran dentro de aproximadamente el mismo orden de magnitud, debido a los resistores
     variables de baja amplitud colocados en el diseño. Considerando esto, se puede concluir que $R_3$
     puede ser usada como una resistencia de ajuste fino, mientras que $R_1$ sería una de ajuste grueso.
-
-    Si es necesario, incluso se pueden hacer ajuster finos con la resistencia variable de $100\si{\ohm}$
-    colocada en $R_1$.
+    Por otro lado, se incluyó el preset de $100\si{\ohm}$ para reducir la sensibilidad a $R_1$.
 
     Los gráficos de las sensibilidades fueron creados a partir de sus fórmulas analíticas (ecuaciones \ref{eq:ej3dVdR3} y \ref{eq:ej3dVdR1}).
 
@@ -145,7 +145,7 @@
         \begin{center}
             \includegraphics[width=0.4\linewidth]{MATLAB/ej3dVd3}
             \includegraphics[width=0.4\linewidth]{MATLAB/ej3dVd1}
-            \caption{$L_x=0.9713\si{\milli\henry}$; $Q_x=53$(Componente Patrón)}
+            \caption{$L_x=0.9416\si{\milli\henry}$; $Q_x=45.2$(Componente Patrón)}
             \label{fig:ej3dVd:patron}
         \end{center}
     \end{figure}
@@ -154,7 +154,7 @@
         \begin{center}
             \includegraphics[width=0.4\linewidth]{MATLAB/ej3dVd3min}
             \includegraphics[width=0.4\linewidth]{MATLAB/ej3dVd1min}
-            \caption{$L_x=0.4\si{\milli\henry}$; $Q_x=53$}
+            \caption{$L_x=0.4\si{\milli\henry}$; $Q_x=45.2$}
             \label{fig:ej3dVd:min}
         \end{center}
     \end{figure}
@@ -163,7 +163,7 @@
         \begin{center}
             \includegraphics[width=0.4\linewidth]{MATLAB/ej3dVd3max}
             \includegraphics[width=0.4\linewidth]{MATLAB/ej3dVd1max}
-            \caption{$L_x=2.1\si{\milli\henry}$; $Q_x=13.25$}
+            \caption{$L_x=2.1\si{\milli\henry}$; $Q_x=11.3$}
             \label{fig:ej3dVd:max}
         \end{center}
     \end{figure}
@@ -171,11 +171,11 @@
     \newpage
     \section{Manual de Uso}
     El puente diseñado permite medir inductancias tales que $L_x\in[0.4\si{\milli\henry};
-    2.1\si{\milli\henry}]$ y $Q\in[0.25Q_N; Q_N]$ para $f=10\si{\kilo\hertz}$. 
+    2.1\si{\milli\henry}]$ y $Q\in[0.25Q_N; Q_N]$ para $f=10\si{\kilo\hertz}$ donde $Q_N=45.2$.
+    
     Instrucciones:
     \begin{enumerate}
         \item Llevar al mínimo todos los presets de $R_1$ y $R_3$.
-        \item Minimizar $V_d$ utilizando el preset de $20\si{\kilo\ohm}$ de $R_1$.
         \item Minimizar $V_d$ utilizando el preset de $1\si{\kilo\ohm}$ de $R_1$.
         \item Minimizar $V_d$ utilizando el preset de $100\si{\ohm}$ de $R_1$.
         \item Minimizar $V_d$ utilizando el preset de $R_3$.
@@ -187,10 +187,6 @@
     contando el número de vueltas dadas al ajuste para tomar los valores de las resistencias
     finales. Se recomienda el uso de vueltas enteras, ya que con esas diferencias de paso
     fueron calculadas las sensibilidades.
-
-    Por otro lado, dado el uso del preset de $20\si{\kilo\ohm}$ en lugar del de $10\si{\kilo\ohm}$,
-    se advierte no pasar de las 13 vueltas, ya que se encuentra fuera del rango de resistencias
-    del puente.
 
     \begin{table}[h]
         \begin{center}
@@ -232,15 +228,15 @@
     Se calculó analíticamente el error en las ecuaciones \ref{eq:ej3errL} y \ref{eq:ej3errQ}.
     \begin{equation*}
         \begin{split}
-            \Delta L_x &=\left| \frac{\delta L_x}{\delta R_1} \right| \cdot \Delta R_1\\
-                       &= C_3 R_4 \cdot \Delta R_1
+            \Delta L_x &=\left| \frac{\delta L_x}{\delta R_1} \right| \cdot \Delta R_1 + \left| \frac{\delta L_x}{\delta r_1} \right| \cdot \Delta r_1\\
+                       &= C_3 R_4 \cdot \Delta R_1 + C_3 R_4 \cdot \Delta r_1
         \end{split}
     \end{equation*}
-
     \begin{equation}
-        \Rightarrow\frac{\Delta L_x}{L_x} = \frac{\Delta R_1}{R_1}
+        \Rightarrow\frac{\Delta L_x}{L_x} = \frac{R_1}{R_1+r_1}\cdot\frac{\Delta R_1}{R_1} + \frac{r_1}{R_1+r_1}\cdot\frac{\Delta r_1}{r_1}
         \label{eq:ej3errL}
     \end{equation}
+    donde $R_1$ es el preset de $1\si{\kilo\ohm}$ y $r_1$ es el preset de $100\si{\ohm}$.
 
     \begin{equation*}
         \begin{split}
