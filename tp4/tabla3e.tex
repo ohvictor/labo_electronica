@@ -1,6 +1,5 @@
 \pgfplotstableset{
     alias/nom/.initial = Nominal,
-    alias/obs/.initial = Observaciones,
 }
 \begin{table}[ht]
     \begin{center}
@@ -8,11 +7,11 @@
             %General%
             col sep = comma,
             string type,
-            columns = {nom,L1,Q1,P1,L10,Q10,P10,L100,Q100,P100,obs},
+            columns = {nom,L1,Q1,L10,Q10,L100,Q100},
             every head row/.style={
                 before row = {
                     \toprule
-                    Valor & \multicolumn{3}{c|}{$f = 1\si{k\hertz}$} & \multicolumn{3}{c|}{$f = 10\si{k\hertz}$} & \multicolumn{3}{c|}{$f = 100\si{k\hertz}$} &\\
+                    Valor & \multicolumn{2}{c|}{$f = 1\si{k\hertz}$} & \multicolumn{2}{c|}{$f = 10\si{k\hertz}$} & \multicolumn{2}{c|}{$f = 100\si{k\hertz}$}\\
                 },
                 after row = {\midrule}
             },
@@ -25,37 +24,25 @@
             columns/nom/.style={
                 column name = Nominal,
             },
-            columns/obs/.style={
-                column name = Observaciones,
-            },
             columns/L1/.style={
-                column name = $L$,
+                column name = $L(\si{\milli\henry})$,
             },
             columns/Q1/.style={
                 column name = $Q$,
             },
-            columns/P1/.style={
-                column name = $\phi$,
-            },
             columns/L10/.style={
-                column name = $L$,
+                column name = $L(\si{\milli\henry})$,
             },
             columns/Q10/.style={
                 column name = $Q$,
             },
-            columns/P10/.style={
-                column name = $\phi$,
-            },
             columns/L100/.style={
-                column name = $L$,
+                column name = $L(\si{\milli\henry})$,
             },
             columns/Q100/.style={
                 column name = $Q$,
             },
-            columns/P100/.style={
-                column name = $\phi$,
-            },
-            ]{tabla3d.csv}
+            ]{tabla3e.csv}
         \caption{Mediciones con el analizador de impedancias}
         \label{tab:ej3e}
     \end{center}

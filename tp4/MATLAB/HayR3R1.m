@@ -52,15 +52,15 @@ zlabel('dVd');
 title('Sensibilidad respecto a R3');
 print -depsc ej3dVd3
 
-% figure(3)
-hold on
+figure(3)
+% hold on
 surf(R3,R1,dVdR1);
 xlabel('R3');
 ylabel('R1');
 zlabel('dVd');
 title('Sensibilidad respecto a R1');
 print -depsc ej3dVd1
-hold off
+% hold off
 Lx = max(spanL); % MAX
 Qx = max(spanQ);
 

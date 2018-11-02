@@ -8,7 +8,7 @@
         
     \end{figure}
     En principio, dado que la bobina entregada tiene un factor de calidad
-    $Q_N\approx53$ a una frecuencia $f=10\si{\kilo\hertz}$, se decidió utilizar un
+    $Q_N\approx45.2$ a una frecuencia $f=10\si{\kilo\hertz}$, se decidió utilizar un
     puente de Hay, como visto en la Figura \ref{fig:Hay}, en lugar de un puente de
     Maxwell, el cual funciona apropiadamente en un rango de $Q\in(1,10)$.
     
@@ -195,21 +195,21 @@
                 Especificación & Valor \\
                 \hline
                 Rango de $L_x$ & $[0.4;2.1]\si{\milli\henry}$ \\
-                Rango de $Q_x$ & $ [13.25; 53] $ \\
+                Rango de $Q_x$ & $ [11.3; 45.2] $ \\
                 Frecuencia & $10\si{\kilo\hertz}$\\
                 $V_g$ & $10\si{\volt}$\\
-                $C_3$ & $2.2\si{\nano\farad}$\\
+                $C_3$ & $1.2\si{\nano\farad}$\\
                 \hline
             \end{tabular}
             \begin{tabular}{|l|r|}
                 \hline
                 Especificación & Valor \\
                 \hline
-                $R_1$ & $[1.8;11.8]\si{\kilo\ohm}$\\
-                $R_3$ & $[100;600]\si{\ohm}$\\
+                $R_1$ & $[200;1200]\si{\ohm}$\\
+                $R_3$ & $[200;1200]\si{\ohm}$\\
                 $\Delta R_1$ & $4\si{\ohm}$ \\
-                $\Delta R_3$ & $20\si{\ohm}$ \\
-                $R_4$ & $100\si{\ohm}$\\
+                $\Delta R_3$ & $40\si{\ohm}$ \\
+                $R_4$ & $1560\si{\ohm}$\\
                 \hline
             \end{tabular}
             \caption{Especificaciones del Puente}
@@ -218,7 +218,8 @@
     \end{table}
 
     \section{Mediciones}
-    Armado el puente en placa experimental, se completó la tabla \ref{tab:ej3d}:
+    Armado el puente en placa experimental, se completó la tabla \ref{tab:ej3d} midiendo el voltaje $V_d$
+    con un multímetro de precisión:
     \input{tabla3d.tex}
 
     Se repitieron las mediciones con el analizador de impedancias y se llenó la tabla \ref{tab:ej3e}
@@ -250,9 +251,24 @@
         \label{eq:ej3errQ}
     \end{equation}
 
-    (LLenar con tabla de errores)
-    % \input{tablaErr.tex}
+    
+    \input{tablaErr.tex}
 
-    Actualizar valores.
+    Los errores de medición experimentales pueden verse en la tabla \ref{tab:ej3err}.
 
     \section{Conclusiones}
+
+    A partir de los datos obtenidos de las inductancias y los factores de calidad, se puede
+    observar que, como se esperaba, para el componente patrón los errores para la inductancia
+    y el factor de calidad son bajos. Sin embargo, para otros componentes y otras frecuencias,
+    los errores son de grados mucho más significantes, demostrando que el puente diseñado
+    sólo es acertado dentro del rango de operación especificado, y mientras más cercano al
+    límite sean las características del componente, más errados serán los resultados.
+
+    Dado esto, se pueden mejorar las mediciones utilizando el amplificador de instrumentación
+    para las mediciones de los voltajes diferenciales, ya que presentan menos ruido a la medición
+    y será más claro observar cuándo se alcanza el punto de voltaje más bajo.
+
+    Por otro lado, en lugar de fabricar el puente sobre una placa multiperforada, en su lugar
+    se puede usar un PCB para disminuir más el ruido y evitar algunas distorciones que pueden
+    ocurrir por efecto del manejo manual de la placa con una estructura más firme.

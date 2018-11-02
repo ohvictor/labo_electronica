@@ -1,1 +1,36 @@
-\chapter{Métodos de medición}
+\chapter{Métodos de medición de puentes}
+
+La principal dificultad en la elección del método de medición de puentes 
+está en que hay que medir tensiones diferenciales de muy baja magnitud. 
+Estas tensiones idealmente deben ser cero (lo cual en la practica no es 
+realizable), haciendo que el ruido que puedan tener los instrumentos sea 
+un problema importante. 
+
+\section{Osciloscopio}
+
+Un osciloscopio trae problemas a la hora de medir, debido a que tiene un 
+piso de ruido, lo que dificulta las mediciones en tensiones bajas, que son 
+las que hay que medir en un puente. Otro problema es que para poder medir 
+esto, que es una tensión diferencial, no se puede utilizar una sola punta, 
+debido a que esta tiene que estar vinculada a la tierra del circuito. Esto 
+obliga a conectar dos puntas y luego hacer la resta de las señales.
+
+La ventaja que tiene este instrumento, es que se puede medir la tensión 
+diferencial en funcion del tiempo, lo que permite apreciar su componente 
+en magnitud y fase.
+
+\section{Multímetro de precisión}
+
+El multímetro de precisión facilita la medición debido a que se puede 
+hacer una medición de la tensión diferencial de forma directa, disminuyendo 
+el error de comparación del osciloscopio. La desventaja es que no se puede medir 
+la tensión diferencial en función del tiempo.
+
+\section{Amplificador de Instrumentación}
+
+Un amplificador de instrumentación posee un elevado coeficiente de rechazo 
+de modo común que minimiza mucho el ruido, lo cual, conectándolo a un 
+osciloscopio, hace que se elimine el piso de ruido de este. Esto hace las 
+mediciones más acertadas y más confiables. Mientras más alto sea el CMRR 
+(cociente entre ganancia en modo diferencial y modo común) mejor resultado 
+se va a obtener a la salida.

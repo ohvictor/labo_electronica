@@ -51,7 +51,7 @@ DR3 = DR3/1;
 
 [Vd,dVdR3,dVdR1] = p_HayR1R3 ( Lx,Qx,R1,DR1,R3,DR3,R4,C3,w,Vg);
 
-% figure(1)
+figure(1)
 surf(R3,R1,Vd);
 xlabel('R3');
 ylabel('R1');
@@ -59,7 +59,7 @@ zlabel('Vd');
 title ('Voltajes');
 print -depsc ej3Vd
 
-% figure(2)
+figure(2)
 surf(R3,R1,dVdR3);
 xlabel('R3');
 ylabel('R1');
@@ -67,7 +67,7 @@ zlabel('dVd');
 title('Sensibilidad respecto a R3');
 print -depsc ej3dVd3
 
-% figure(3)
+figure(3)
 % hold on
 surf(R3,R1,dVdR1);
 xlabel('R3');
@@ -81,7 +81,7 @@ Qx = max(spanQ);
 
 [Vd,dVdR3,dVdR1] = p_HayR1R3 ( Lx,Qx,R1,DR1,R3,DR3,R4,C3,w,Vg);
 
-% figure(4)
+figure(4)
 surf(R3,R1,Vd);
 xlabel('R3');
 ylabel('R1');
@@ -89,7 +89,7 @@ zlabel('Vd');
 title ('Voltajes');
 print -depsc ej3Vdmax
 
-% figure(5)
+figure(5)
 surf(R3,R1,dVdR3);
 xlabel('R3');
 ylabel('R1');
@@ -97,7 +97,7 @@ zlabel('dVd');
 title('Sensibilidad respecto a R3');
 print -depsc ej3dVd3max
 
-% figure(6)
+figure(6)
 surf(R3,R1,dVdR1);
 xlabel('R3');
 ylabel('R1');
@@ -110,7 +110,7 @@ Qx = min(spanQ);
 
 [Vd,dVdR3,dVdR1] = p_HayR1R3 ( Lx,Qx,R1,DR1,R3,DR3,R4,C3,w,Vg);
 
-% figure(7)
+figure(7)
 surf(R3,R1,Vd);
 xlabel('R3');
 ylabel('R1');
@@ -118,7 +118,7 @@ zlabel('Vd');
 title ('Voltajes');
 print -depsc ej3Vdmin
 
-% figure(8)
+figure(8)
 surf(R3,R1,dVdR3);
 xlabel('R3');
 ylabel('R1');
@@ -126,7 +126,7 @@ zlabel('dVd');
 title('Sensibilidad respecto a R3');
 print -depsc ej3dVd3min
 
-% figure(9)
+figure(9)
 surf(R3,R1,dVdR1);
 xlabel('R3');
 ylabel('R1');
