@@ -1,0 +1,20 @@
+\begin{circuitikz}[scale = 1, transform shape]
+    \draw
+    (0,0)
+    to [sV, l=$V_g$] (0,8)
+    to (4,8)
+    to [C, l=$C_1$] (4,6)
+    to [R, l=$R_1$] (4,4)
+    to [C, l=$C_3$] (4,0)
+    to (0,0)
+    (4,3) to (2,3)
+    to [R, l=$R_3$] (2,1)
+    to (4,1)
+    (4,8) to (8,8)
+    to [R, l=$R_2$] (8,4)
+    to [R, l=$R_4$] (8,0) to (4,0)
+    (4,4) to [voltmeter, l=$V_d$] (8,4)
+    ;
+\end{circuitikz}
+\caption{Puente de Wien}
+\label{fig:Wien}
