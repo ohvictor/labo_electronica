@@ -1,12 +1,46 @@
-\chapter{Medicion de distorcion armonica}
-\section{Distorsión armónica}
-Se midió la distorsión armónica del generador de funciones Agilent(modelo)
-utilizando una señal senoidal de $0.7\si{\mega\hertz}$ y $250\si{\milli\volt}$.
+\chapter{Medicion de distorción armónica}
+\section{Medición}
+Utilizando el analizador de espectros, se midió la distorsión armónica del generador de funciones Agilent(modelo)
+con una señal senoidal de $0.7\si{\mega\hertz}$ y $250\si{\milli\volt} pp$.
 
-Se calculó el error introducido en el THD debido a la cantidad infinita de armónicos
-medidos.
-
+Para calcular la distorsión armónica total (THD) medida con el analizador, se utilizaron las ecuaciones \ref{eq:THD}
+y \ref{eq:P_k}.
 \begin{equation}
     THD=\frac{\sum_{j=1}^{n} P_j}{\sum_{i=0}^{n} P_i}
+    \label{eq:THD}
 \end{equation}
 
+\begin{equation}
+    P_k[\si{\milli\watt}]= 1\si{\milli\watt} * 10^{P_k[dBm]/10}
+    \label{eq:P_k}
+\end{equation}
+
+Entonces,
+
+\begin{equation*}
+    P_0 = 123 mW;P_1 = 123 mW;P_2 = 123 mW
+\end{equation*}
+
+\begin{equation}
+    \Rightarrow THD = Ans
+\end{equation}
+
+Con las mediciones y cácluclos anteriores y utilizando otros generadores de funciones, se obtuvo la siguiente tabla:
+
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+            \hline
+            Modelo & $P_0 (mW)$ & $P_1 (mW)$ & $P_2(mW)$ & $P_3(mW)$ & $P_4(mW)$ & $THD$ & $THD_{Fab}$ \\
+            \hline
+            Agilent  & & & & & & & \\
+            Picotest & & & & & & & \\
+            Instek   & & & & & & & \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\section{Comparación con la hoja de datos}
+
+\section{Conclusiones}
