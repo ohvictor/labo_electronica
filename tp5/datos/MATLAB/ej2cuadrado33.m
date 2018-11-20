@@ -6,17 +6,16 @@ f = 0.7e6; % Hz
 w = 2*pi*f;
 
 % Cálculos para generarla
-k = (1:1000)';
-n = 2*k-1;
+n = (1:1000)';
 
-Bn = Ac*4./(pi.*n);
+Bn = (Ac*4/pi)*(1-cos(2/3*pi.*n))./n;
 wn = w*n;
 
 Pn = Bn.^2/50;
 Pdbm = 10*log10(Pn/1e-3);
 
 % Generación de las ondas
-t = (0:1/f/1000:2/f)';
+t = (-2/f:1/f/1000:2/f)';
 Sf = zeros(length(t),1);
 sn = zeros(length(t));
 for i=1:length(n)
@@ -28,12 +27,13 @@ end
 figure(1);
 stem(n(1:10)*w ,Pdbm(1:10));
 grid on;
-xlabel('Frecuencia')
+xlabel('Frecuencia(Hz)')
 ylabel('Potencia(dBm)');
+title('Espectro Simulado');
 
 figure(2);
 plot(t,Sf);
-axis([0 3e-6 -0.15 0.15]);
+% axis([-3e-6 3e-6 -0.15 0.15]);
 grid on;
-xlabel('Tiempo');
-ylabel('Voltaje(V)
+xlabel('Tiempo(s)');
+ylabel('Voltaje(V)');
