@@ -16,7 +16,7 @@ Pn = Bn.^2/50;
 Pdbm = 10*log10(Pn/1e-3);
 
 % Generación de las ondas
-t = (0:1/f/1000:4/f)';
+t = (0:1/f/1000:2/f)';
 Sf = zeros(length(t),1);
 sn = zeros(length(t));
 for i=1:length(n)
@@ -33,7 +33,7 @@ ylabel('Potencia(dBm)');
 
 figure(2);
 plot(t,Sf);
-axis([0 6e-6 -0.15 0.15]);
+axis([0 3e-6 -0.15 0.15]);
 grid on;
 xlabel('Tiempo');
-ylabel('Voltaje(V)');
+ylabel('Voltaje(V)
