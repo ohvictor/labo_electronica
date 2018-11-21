@@ -8,10 +8,11 @@ w = 2*pi*f;
 % Cálculos para generarla
 n = (1:1000)';
 
-Bn = (Ac*4/pi)*(1-cos(2/3*pi.*n))./n;
+An = 2*Ac/pi./n;
+Bn = 3*Ac/pi./n;
 wn = w*n;
 
-Pn = Bn.^2/50;
+Pn = (An + Bn).^2/50;
 Pdbm = 10*log10(Pn/1e-3);
 
 % Generación de las ondas
@@ -19,8 +20,10 @@ t = (-2/f:1/f/1000:2/f)';
 Sf = zeros(length(t),1);
 sn = zeros(length(t));
 for i=1:length(n)
-    Sf = Sf+sin(w*n(i)*t)*Bn(i);
-    sn(:,i) = sin(w*n(i)*t)*Bn(i);
+    if(rem(n(i),3) ~= 0)
+        Sf = Sf+sin(w*n(i)*t)*Bn(i) + cos(w*n(i)*t)*An(i);
+        sn(:,i) = sin(w*n(i)*t)*Bn(i)+ cos(w*n(i)*t)*An(i);
+    end
 end
 
 % Dibujo de la onda resultante
