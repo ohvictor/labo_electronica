@@ -26,7 +26,7 @@ end
 
 % Dibujo de la onda resultante
 figure(1);
-stem(n(1:10)*w ,Pdbm(1:10));
+stem(n(1:10)*f ,Pdbm(1:10));
 grid on;
 xlabel('Frecuencia(Hz)')
 ylabel('Potencia(dBm)');
