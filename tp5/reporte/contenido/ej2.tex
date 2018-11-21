@@ -35,7 +35,7 @@ Utilizando señales (i)cuadradas, (ii)triangulares(simetría 50\%) y (iii)un tre
     Por lo tanto, las amplitudes observadas serán las de los armónicos
     impares de la fundamental, mientras que los armónicos pares se anulan.
     
-    \section{Simulación del Espectro}
+    \subsection{Simulación del Espectro}
     Dado que se tienen las amplitudes de las diferentes frecuencias que
     conforman la señal cuadrada, se pueden calcular las potencias entregadas
     sobre la entrada del analizador, teniendo en cuenta que tiene una
@@ -83,7 +83,7 @@ Utilizando señales (i)cuadradas, (ii)triangulares(simetría 50\%) y (iii)un tre
 \section{Señal Triangular}
     \subsection{Análisis matemático}
 
-    Dado que el análisis es de la señal dada en la figura \ref{fig:2,1,1}
+    Dado que el análisis es de la señal dada en la figura \ref{fig:2,2,1}
     se observa que para un análisis de Fourier se trata de una onda
     impar:
 
@@ -108,16 +108,16 @@ Utilizando señales (i)cuadradas, (ii)triangulares(simetría 50\%) y (iii)un tre
     Por lo tanto, las amplitudes observadas serán las de los armónicos
     impares de la fundamental, mientras que los armónicos pares se anulan.
 
-    \section{Simulación del Espectro}
+    \subsection{Simulación del Espectro}
     Bajo el mismo método que en la señal cuadrada, se simuló el espectro
     de la señal triangular como se ve en la figura \ref{fig:2,2,1}. Se puede
     observar que, a diferencia de la señal cuadrada, la atenuación de cada
-    armónico de mayor orden es doblemente mayor.
+    armónico de mayor orden es doblemente mayor(figura \ref{fig:2,2,2}).
 
     \begin{figure}[ht]
         \begin{center}
             \includegraphics[width=0.7\linewidth]{contenido/img/spect_tri.png}
-            \caption{Simulación de las potencias a ser observadas}
+            \caption{Simulación de las potencias a ser observadas en la señal triangular}
             \label{fig:2,2,2}
         \end{center}
     \end{figure}
@@ -132,5 +132,65 @@ Utilizando señales (i)cuadradas, (ii)triangulares(simetría 50\%) y (iii)un tre
     \end{figure}
 
 \section{Tren de Pulsos}
+    \subsection{Análisis matemático}
 
+    Dado que el análisis es de la señal dada en la figura \ref{fig:2,3,1}
+    se observa que para un análisis de Fourier se trata de una onda
+    par:
+
+    \begin{figure}[ht]
+        \begin{center}
+            \includegraphics[width=\linewidth]{contenido/img/sig_sqr33.png}
+            \caption{Señal cuadrada con DC 33.33\%}
+            \label{fig:2,3,1}
+        \end{center}
+    \end{figure}
+
+    Por lo tanto, la serie de Fourier estará dada por sólo senos:
+
+    \begin{equation}
+        S(t) = \sum_{n=1}^{\infty} A_{n} sen(2 \pi f n t)
+        \label{eq:sqr33}
+    \end{equation}
+
+    \begin{equation}
+        A_{n} =\frac{1}{\pi n} \cdot sen(\frac{\pi}{3}n)
+        \label{eq:sqr33amp}
+    \end{equation}
+
+    De la expresión	\ref{eq:sqr33amp}, se puede observar que la amplitud de cada armónico
+    múltiplo de 3 se verá anulado.
+    
+    \subsection{Simulación del Espectro}
+    Se tuvieron en cuenta las mismas consideraciones para calcular las potencias de cada
+    frecuencia, con las cuales se crea la figura \ref{fig:2,3,2}.
+
+    Debe notarse que este espectro se vería en una mitad del analizador,
+    dado que las frecuencias multiplicadoras al oscilador local son sumadas
+    y restadas respecto a este.
+
+    \begin{figure}[ht]
+        \begin{center}
+            \includegraphics[width=0.75\linewidth]{contenido/img/spect_sqr33.png}
+            \caption{Simulación de las potencias de la señal cuadrada con DC = 33.33\%}
+            \label{fig:2,3,2}
+        \end{center}
+    \end{figure}
+
+    \subsection{Medición en el Analizador de Espectros}
+
+    \begin{figure}[ht]
+        \begin{center}
+            \caption{Pantalla del Analizador de la señal cuadrada}
+            \label{fig:ansr,sqr33}
+        \end{center}
+    \end{figure}
+
+    \subsection{Cálculo del DC}
+    Utilizando nuevamente la ecuación \ref{eq:DC} se calculó, con la salida del analizador
+    de espectros, el DC de la señal.
+
+    Dado que en la salida del analizador observada en la figura \ref{fig:ansr,sqr}
+    se puede observar que uno de cada tres armónicos están anulados, entonces el
+    Duty Cycle es de $33.33 \%$.
 \section{Conclusiones}
