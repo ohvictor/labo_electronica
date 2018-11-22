@@ -25,4 +25,4 @@
 \contentsline {chapter}{\numberline {7}Se\IeC {\~n}al de Televisi\IeC {\'o}n}{15}
 \contentsline {chapter}{\numberline {8}Otras Se\IeC {\~n}ales}{16}
 \contentsline {section}{\numberline {8.1}$\qopname \relax o{sin}(x)/x$}{16}
-\contentsline {section}{\numberline {8.2}Tren de Pulsos}{16}
+\contentsline {section}{\numberline {8.2}Tren de Pulsos}{17}
