@@ -58,8 +58,13 @@ Utilizando señales (i)cuadradas, (ii)triangulares(simetría 50\%) y (iii)un tre
 
     \subsection{Medición en el Analizador de Espectros}
 
+    Se conectó la señal generada al analizador de espectros y se obtuvo la figura \ref{fig:ansr,sqr}.
+    De esta se puede observar cómo la potencia de uno cada dos armónicos es significantemente
+    menor a la de los demás armónicos que generan la señal cuadrada.
+
     \begin{figure}[ht]
         \begin{center}
+            \includegraphics[width=0.75\linewidth]{contenido/img/espectro_cuadrada.jpg}
             \caption{Pantalla del Analizador de la señal cuadrada}
             \label{fig:ansr,sqr}
         \end{center}
@@ -124,12 +129,8 @@ Utilizando señales (i)cuadradas, (ii)triangulares(simetría 50\%) y (iii)un tre
 
     \subsection{Medición en el Analizador de Espectros}
 
-    \begin{figure}[ht]
-        \begin{center}
-            \caption{Pantalla del Analizador de la señal triangular}
-            \label{fig:ansr,tri}
-        \end{center}
-    \end{figure}
+    No se pudo generar la señal triangular con el generador Agilent, el cual tiene un límite
+    de frecuencia de $200\si{\kilo\hertz}$ para señales triangulares.
 
 \section{Tren de Pulsos}
     \subsection{Análisis matemático}
@@ -179,9 +180,13 @@ Utilizando señales (i)cuadradas, (ii)triangulares(simetría 50\%) y (iii)un tre
 
     \subsection{Medición en el Analizador de Espectros}
 
+    Como se oberva en la figura \ref{fig:ansr,sqr33}, a difrencia de la medición obtenida
+    en la figura \ref{fig:ansr,sqr}, la potencia es menor en una de cada tres potencias.
+
     \begin{figure}[ht]
         \begin{center}
-            \caption{Pantalla del Analizador de la señal cuadrada}
+            \includegraphics[width=0.75\linewidth]{contenido/img/espectro_cuadrada33.jpg}
+            \caption{Pantalla del Analizador de la señal cuadrada con DC = 33.33\%}
             \label{fig:ansr,sqr33}
         \end{center}
     \end{figure}
@@ -194,3 +199,12 @@ Utilizando señales (i)cuadradas, (ii)triangulares(simetría 50\%) y (iii)un tre
     se puede observar que uno de cada tres armónicos están anulados, entonces el
     Duty Cycle es de $33.33 \%$.
 \section{Conclusiones}
+
+En primer lugar, a partir de las mediciones obtenidas, es posible calcular el DC de señales
+de pulsos teniendo en cuenta la razón de armónicos con potencias mucho menores a las de los
+otros armónicos. Esto concuerda con los resultados obtenidos en las simulaciones y los análisis
+matemáticos de sus respectivas señales.
+
+A pesar de haber errores en las frecuencias en el analizador de espectros, las potencias obtenidas
+en el analizador son similares a las obtenidas en la simulación. Por lo tanto, se puede concluir que
+el analizador es preciso en la medición de las potencias del espectro.
