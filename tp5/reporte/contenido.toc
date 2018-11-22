@@ -1,0 +1,28 @@
+\babel@toc {spanish}{}
+\contentsline {chapter}{\numberline {1}Medicion de distorci\IeC {\'o}n arm\IeC {\'o}nica}{2}
+\contentsline {section}{\numberline {1.1}Medici\IeC {\'o}n}{2}
+\contentsline {section}{\numberline {1.2}Comparaci\IeC {\'o}n con la hoja de datos y Conclusiones}{2}
+\contentsline {chapter}{\numberline {2}An\IeC {\'a}lisis de otras se\IeC {\~n}ales}{4}
+\contentsline {section}{\numberline {2.1}Se\IeC {\~n}al Cuadrada}{4}
+\contentsline {subsection}{\numberline {2.1.1}An\IeC {\'a}lisis matem\IeC {\'a}tico}{4}
+\contentsline {subsection}{\numberline {2.1.2}Simulaci\IeC {\'o}n del Espectro}{5}
+\contentsline {subsection}{\numberline {2.1.3}Medici\IeC {\'o}n en el Analizador de Espectros}{5}
+\contentsline {subsection}{\numberline {2.1.4}C\IeC {\'a}lculo del DC}{5}
+\contentsline {section}{\numberline {2.2}Se\IeC {\~n}al Triangular}{6}
+\contentsline {subsection}{\numberline {2.2.1}An\IeC {\'a}lisis matem\IeC {\'a}tico}{6}
+\contentsline {subsection}{\numberline {2.2.2}Simulaci\IeC {\'o}n del Espectro}{7}
+\contentsline {subsection}{\numberline {2.2.3}Medici\IeC {\'o}n en el Analizador de Espectros}{7}
+\contentsline {section}{\numberline {2.3}Tren de Pulsos}{7}
+\contentsline {subsection}{\numberline {2.3.1}An\IeC {\'a}lisis matem\IeC {\'a}tico}{7}
+\contentsline {subsection}{\numberline {2.3.2}Simulaci\IeC {\'o}n del Espectro}{8}
+\contentsline {subsection}{\numberline {2.3.3}Medici\IeC {\'o}n en el Analizador de Espectros}{8}
+\contentsline {subsection}{\numberline {2.3.4}C\IeC {\'a}lculo del DC}{8}
+\contentsline {section}{\numberline {2.4}Conclusiones}{8}
+\contentsline {chapter}{\numberline {3}An\IeC {\'a}lisis de una se\IeC {\~n}al AM}{10}
+\contentsline {chapter}{\numberline {4}An\IeC {\'a}lisis de una se\IeC {\~n}al FM}{12}
+\contentsline {chapter}{\numberline {5}Distribucion de Radiofrecuencias en Argentina}{13}
+\contentsline {chapter}{\numberline {6}An\IeC {\'a}lisis del espectro EM en la banda de FM}{14}
+\contentsline {chapter}{\numberline {7}Se\IeC {\~n}al de Televisi\IeC {\'o}n}{15}
+\contentsline {chapter}{\numberline {8}Otras Se\IeC {\~n}ales}{16}
+\contentsline {section}{\numberline {8.1}$\qopname \relax o{sin}(x)/x$}{16}
+\contentsline {section}{\numberline {8.2}Tren de Pulsos}{16}
